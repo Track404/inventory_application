@@ -1,0 +1,12 @@
+// routes/usersRouter.js
+const { Router } = require('express');
+const dbController = require('../controllers/dbController');
+const dbRouter = Router();
+
+dbRouter.get('/', dbController.getUsers);
+dbRouter.get('/new', dbController.createMovie);
+dbRouter.post('/new', dbController.createMoviePost);
+dbRouter.get('/:title/update', dbController.updateMovie);
+dbRouter.post('/:title/update', dbController.updateMoviePost);
+dbRouter.get('/:title/delete', dbController.deleteMovie);
+module.exports = dbRouter;
