@@ -1,8 +1,8 @@
 const db = require('../db/query');
 
 async function getMovies(req, res) {
-  const usernames = await db.getAllMovies();
-  res.render('ShowMovies');
+  const movies = await db.getAllMovies();
+  res.render('item', { title: 'Show Movies', movies: movies });
 }
 
 async function createMovie(req, res) {

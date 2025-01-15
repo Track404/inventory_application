@@ -1,10 +1,8 @@
-require('dotenv').config();
-const path = require('node:path');
-
 const express = require('express');
-
+require('dotenv').config();
 const app = express();
-const dbRoute = require('./routes/dbRoute');
+const dbRoute = require('./routes/dbroute');
+const path = require('node:path');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
