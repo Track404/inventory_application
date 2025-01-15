@@ -1,4 +1,3 @@
-<!-- views/index.ejs -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,11 +5,12 @@
   </head>
   <body>
     <h1><%= title %></h1>
+    <div></div>
     <ul>
       <% movies.forEach(movie => { %>
       <li>ID: <%= movie.id %>, Title: <%= movie.title %></li>
       <% }); %>
     </ul>
-    <a href="/create">Add new movie</a>
+    <a href="/new">Add new movie</a>
   </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Movie</title>
+  </head>
+  <body>
+    <h1>Create a new Movie !</h1>
+    <form method="post" action="/new">
+      <div>
+        <label for="title">title</label>
+        <input type="text" placeholder="Toy Story" id="title" name="title" />
+      </div>
+      <div>
+        <label for="director">Director ID</label>
+        <input type="number" placeholder="2" id="director" name="director" />
+      </div>
+      <div>
+        <label for="year">Year</label>
+        <input
+          type="number"
+          placeholder="YYYY"
+          min="1800"
+          max="2050"
+          id="year"
+          name="year"
+        />
+      </div>
+      <div>
+        <label for="number_of_minutes">movies lenght(in min)</label>
+        <input
+          type="number"
+          placeholder="70"
+          id="number_of_minutes"
+          name="number_of_minutes"
+        />
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

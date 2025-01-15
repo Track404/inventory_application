@@ -10,8 +10,14 @@ async function createMovie(req, res) {
 }
 
 async function createMoviePost(req, res) {
-  const { username } = req.body;
-  await db.insertMovie(username);
+  const { title, director, year, number_of_minutes } = req.body;
+  console.log(req.body);
+  await db.insertMovie(
+    title,
+    Number(director),
+    Number(year),
+    Number(number_of_minutes)
+  );
   res.redirect('/');
 }
 
