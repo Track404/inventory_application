@@ -22,12 +22,19 @@ async function createMoviePost(req, res) {
 }
 
 async function updateMovie(req, res) {
-  res.render('updateMovie');
+  const movie = await db.getSingleMovie(req.params.title);
+  res.render('updateMovie', { movies: movie });
 }
 
 async function updateMoviePost(req, res) {
-  const { username } = req.body;
-  await db.updateMovie(username);
+  const { title, director, year, number_of_minutes } = req.body;
+  await db.updateMovie(
+    title,
+    director,
+    year,
+    number_of_minutes,
+    req.params.title
+  );
   res.redirect('/');
 }
 

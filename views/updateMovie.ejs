@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Movie</title>
+  </head>
+  <body>
+    <h1>Update the Movie !</h1>
+    <form method="post" action="/<%= movies[0].id %>/update">
+      <div>
+        <label for="title">title</label>
+        <input
+          type="text"
+          value="<%= movies[0].title %>"
+          id="title"
+          name="title"
+        />
+      </div>
+      <div>
+        <label for="director">Director ID</label>
+        <input
+          type="number"
+          value="<%= movies[0].director_id %>"
+          id="director"
+          name="director"
+        />
+      </div>
+      <div>
+        <label for="year">Year</label>
+        <input
+          type="number"
+          value="<%= movies[0].year %>"
+          min="1800"
+          max="2050"
+          id="year"
+          name="year"
+        />
+      </div>
+      <div>
+        <label for="number_of_minutes">movies lenght(in min)</label>
+        <input
+          type="number"
+          value="<%= movies[0].length_minutes %>"
+          id="number_of_minutes"
+          name="number_of_minutes"
+        />
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

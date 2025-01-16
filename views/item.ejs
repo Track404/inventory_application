@@ -9,6 +9,10 @@
     <ul>
       <% movies.forEach(movie => { %>
       <li>ID: <%= movie.id %>, Title: <%= movie.title %></li>
+      <button>
+        <a href="/<%= movie.id %>/update">Update</a>
+      </button>
+
       <% }); %>
     </ul>
     <a href="/new">Add new movie</a>
