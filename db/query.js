@@ -1,9 +1,13 @@
-const { updateMoviePost } = require('../controllers/dbController');
 const pool = require('./pool');
 
 async function getAllMovies() {
-  const { rows } = await pool.query('SELECT * FROM movies');
-  return rows;
+  try {
+    const { rows } = await pool.query('SELECT * FROM movies');
+    return rows;
+  } catch (err) {
+    console.error('Error fetching movies:', err);
+    throw err;
+  }
 }
 
 async function insertMovie(title, director, year, number_of_minutes) {
