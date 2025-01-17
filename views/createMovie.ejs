@@ -14,7 +14,14 @@
       </div>
       <div>
         <label for="director">Director ID</label>
-        <input type="number" placeholder="2" id="director" name="director" />
+        <select name="director" id="director">
+          <% directors.forEach(director => { %>
+
+          <option value="<%= director.director_id %>">
+            <%= director.name %>
+          </option>
+          <%} ); %>
+        </select>
       </div>
       <div>
         <label for="year">Year</label>

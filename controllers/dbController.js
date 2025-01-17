@@ -6,7 +6,8 @@ async function getMovies(req, res) {
 }
 
 async function createMovie(req, res) {
-  res.render('createMovie');
+  const director = await db.getAllDirectors();
+  res.render('createMovie', { directors: director });
 }
 
 async function createMoviePost(req, res) {
