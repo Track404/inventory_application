@@ -19,12 +19,18 @@
       </div>
       <div>
         <label for="director">Director ID</label>
-        <input
-          type="number"
-          value="<%= movies[0].director_id %>"
-          id="director"
-          name="director"
-        />
+        <select name="director" id="director">
+          <% directors.forEach(director => { if(director.director_id ===
+          movies[0].director_id){%>
+          <option value="<%= director.director_id %>" selected>
+            <%= director.name %>
+          </option>
+          <%} else{%>
+          <option value="<%= director.director_id %>">
+            <%= director.name %>
+          </option>
+          <%} }); %>
+        </select>
       </div>
       <div>
         <label for="year">Year</label>

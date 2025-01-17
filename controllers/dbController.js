@@ -23,7 +23,8 @@ async function createMoviePost(req, res) {
 
 async function updateMovie(req, res) {
   const movie = await db.getSingleMovie(req.params.title);
-  res.render('updateMovie', { movies: movie });
+  const director = await db.getAllDirectors();
+  res.render('updateMovie', { movies: movie, directors: director });
 }
 
 async function updateMoviePost(req, res) {
