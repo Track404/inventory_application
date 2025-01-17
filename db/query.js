@@ -37,10 +37,15 @@ async function updateMovie(title, director, year, number_of_minutes, id) {
     [title, director, year, number_of_minutes, id]
   );
 }
+
+async function deleteMovieDb(id) {
+  await pool.query('DELETE FROM movies WHERE id= $1', [id]);
+}
 module.exports = {
   getAllMovies,
   insertMovie,
   getSingleMovie,
   updateMovie,
   getAllDirectors,
+  deleteMovieDb,
 };

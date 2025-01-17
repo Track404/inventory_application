@@ -12,7 +12,6 @@ async function createMovie(req, res) {
 
 async function createMoviePost(req, res) {
   const { title, director, year, number_of_minutes } = req.body;
-  console.log(req.body);
   await db.insertMovie(
     title,
     Number(director),
@@ -40,8 +39,9 @@ async function updateMoviePost(req, res) {
   res.redirect('/');
 }
 
-async function deleteMovie(req, res) {
-  await db.deleteMovie();
+async function deleteMoviePost(req, res) {
+  console.log(req.params.title);
+  await db.deleteMovieDb(req.params.title);
   res.redirect('/');
 }
 
@@ -51,5 +51,5 @@ module.exports = {
   createMoviePost,
   updateMovie,
   updateMoviePost,
-  deleteMovie,
+  deleteMoviePost,
 };
