@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Category</title>
+  </head>
+  <body>
+    <h1>Create a new Category !</h1>
+    <%- include("partials/errors.ejs") %>
+
+    <form method="post" action="/category/new">
+      <div>
+        <label for="category">Category</label>
+        <input
+          type="text"
+          placeholder="Steven Spilberg"
+          id="category"
+          name="category"
+          required
+        />
+      </div>
+
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

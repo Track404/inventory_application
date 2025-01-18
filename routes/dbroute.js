@@ -18,4 +18,11 @@ dbRouter.post('/:title/delete', dbController.deleteMoviePost);
 
 //Router for category
 dbRouter.get('/category', dbControllerCategory.getCategory);
+dbRouter.get('/category/new', dbControllerCategory.createCategory);
+dbRouter.post(
+  '/category/new',
+  dbControllerCategory.validateCategory,
+  dbControllerCategory.createCategoryPost
+);
+
 module.exports = dbRouter;

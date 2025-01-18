@@ -3,7 +3,7 @@ const db = require('../db/query');
 const { body, validationResult } = require('express-validator');
 
 // validation of the input data
-const alphaErr = 'must only contain letters.';
+
 const lengthErr = 'must be between 1 and 20 characters.';
 const yearErr = 'must be between 1800 and 2100';
 const minutesErr = 'must be between 1min and 1000min';

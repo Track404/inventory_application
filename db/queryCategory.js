@@ -5,6 +5,10 @@ async function getAllCategories() {
   return rows;
 }
 
+async function insertCategory(category) {
+  await pool.query('INSERT INTO directors (name) VALUES ($1)', [category]);
+}
 module.exports = {
   getAllCategories,
+  insertCategory,
 };
