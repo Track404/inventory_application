@@ -7,16 +7,13 @@
     <h1><%= title %></h1>
     <div><a href="/category">Category</a> <a href="/">Movies</a></div>
     <ul>
-      <% movies.forEach(movie => { %>
-      <li>
-        Title: <%= movie.title %> Year: <%= movie.year %> , Lenght: <%=
-        movie.length_minutes %> min Director: <%= movie.director %>
-      </li>
+      <% categories.forEach(category => { %>
+      <li>Name: <%= category.name %></li>
       <button>
-        <a href="/<%= movie.id %>/update">Update</a>
+        <a href="/category/<%= category.id %>/update">Update</a>
       </button>
       <form
-        action="/<%= movie.id %>/delete"
+        action="/category/<%= category.id %>/delete"
         method="POST"
         style="display: inline"
       >
@@ -29,6 +26,6 @@
       </form>
       <% }); %>
     </ul>
-    <a href="/new">Add new movie</a>
+    <a href="/category/new">Add new Category</a>
   </body>
 </html>
