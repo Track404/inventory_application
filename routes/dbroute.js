@@ -30,4 +30,9 @@ dbRouter.post(
   dbControllerCategory.validateCategory,
   dbControllerCategory.updateCategoryPost
 );
+
+dbRouter.post(
+  '/category/:title/delete',
+  dbControllerCategory.deleteCategoryPost
+);
 module.exports = dbRouter;

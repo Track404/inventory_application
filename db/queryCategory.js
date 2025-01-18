@@ -23,9 +23,15 @@ async function updateCategory(name, id) {
     id,
   ]);
 }
+
+async function deleteCategoryDb(id) {
+  await pool.query('DELETE FROM movies WHERE director_id= $1', [id]);
+  await pool.query('DELETE FROM directors WHERE director_id= $1', [id]);
+}
 module.exports = {
   getAllCategories,
   insertCategory,
   getSingleCategory,
   updateCategory,
+  deleteCategoryDb,
 };

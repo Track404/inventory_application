@@ -51,6 +51,11 @@ async function updateCategoryPost(req, res) {
   await db.updateCategory(category, req.params.title);
   res.redirect('/category');
 }
+
+async function deleteCategoryPost(req, res) {
+  await db.deleteCategoryDb(req.params.title);
+  res.redirect('/category');
+}
 module.exports = {
   validateCategory,
   getCategory,
@@ -58,4 +63,5 @@ module.exports = {
   createCategoryPost,
   updateCategory,
   updateCategoryPost,
+  deleteCategoryPost,
 };
