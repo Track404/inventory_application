@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Category</title>
+  </head>
+  <body>
+    <h1>Create a new Category !</h1>
+    <%- include("partials/errors.ejs") %>
+
+    <form
+      method="post"
+      action="/category/<%= category[0].director_id %>/update"
+    >
+      <div>
+        <label for="category">Category</label>
+        <input
+          type="text"
+          value="<%= category[0].name%>"
+          id="category"
+          name="category"
+          required
+        />
+      </div>
+
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

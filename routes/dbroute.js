@@ -24,5 +24,10 @@ dbRouter.post(
   dbControllerCategory.validateCategory,
   dbControllerCategory.createCategoryPost
 );
-
+dbRouter.get('/category/:title/update', dbControllerCategory.updateCategory);
+dbRouter.post(
+  '/category/:title/update',
+  dbControllerCategory.validateCategory,
+  dbControllerCategory.updateCategoryPost
+);
 module.exports = dbRouter;

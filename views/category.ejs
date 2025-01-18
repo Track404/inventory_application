@@ -10,10 +10,10 @@
       <% categories.forEach(category => { %>
       <li>Name: <%= category.name %></li>
       <button>
-        <a href="/category/<%= category.id %>/update">Update</a>
+        <a href="/category/<%= category.director_id %>/update">Update</a>
       </button>
       <form
-        action="/category/<%= category.id %>/delete"
+        action="/category/<%= category.director_id %>/delete"
         method="POST"
         style="display: inline"
       >
